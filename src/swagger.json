@@ -32,13 +32,24 @@
           "$ref": "#/components/schemas/Donation"
         }
       }
-    ]
+    ],
+    "responses": {
+      "200": {
+        "description": "status True"
+      },
+      "400": {
+        "description": "data invalid"
+      }
+    }
   
    }
  }
  },
  "components": {
  "schemas": {
+  "ReponseDonation": {
+    "type": "object"
+  },
   "Donation": {
     "type": "object",
     "properties": {
@@ -47,7 +58,8 @@
         "type": "string"
       },
       "email": {
-        "type":"string"
+        "type":"string",
+       " format": "email"
        
       },
       "phone": {
