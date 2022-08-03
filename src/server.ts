@@ -1,13 +1,15 @@
 import express, { NextFunction, Request, Response } from "express";
 import { donationRoutes } from "./routes/donation.routes";
 import {AppError} from "./util/AppError"
+import cors from 'cors';
+
 import swaggerUi from 'swagger-ui-express';
 import swaggerFile from './swagger.json';
 
   const app = express();
   
   app.use(express.json());
-
+  app.use(cors());
   app.use("/api-docs",swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
   app.use(donationRoutes);
