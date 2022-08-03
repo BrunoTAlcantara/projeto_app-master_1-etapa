@@ -95,7 +95,7 @@
       },
       "deviceCount": {
         "required" : true,
-        "type": "string"
+        "type": "number"
       },
       "devices": {
         "type": "array",
