@@ -12,7 +12,7 @@ class DonationsRepository implements IDonationRepository {
   async list(): Promise<any> {
     const donations = await this.prisma.donation.findMany({
       orderBy: {
-        id: "desc",
+        createdAt: "desc",
       },
       select: {
         id: true,
