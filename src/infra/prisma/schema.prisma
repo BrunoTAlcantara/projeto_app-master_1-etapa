@@ -17,7 +17,7 @@ model Donation {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   giverId   String
-  devicesId String
+  devicesId String?
 }
 
 model Giver {
