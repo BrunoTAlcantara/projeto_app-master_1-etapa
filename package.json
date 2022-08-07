@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev src/shared/index.ts",
     "test": "jest",
-    "build": "tsc",
+    "tsc": "tsc",
     "start": "node dist/src/shared/index.js"
   },
   "dependencies": {
