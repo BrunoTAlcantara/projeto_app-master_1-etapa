@@ -7,7 +7,7 @@
     "dev": "ts-node-dev src/shared/index.ts",
     "test": "jest",
     "build": "tsc",
-    "start": "node dist/src/index.js"
+    "start": "node dist/src/shared/index.ts"
   },
   "dependencies": {
     "@prisma/client": "^4.1.1",
