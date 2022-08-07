@@ -1,0 +1,9 @@
+Package by Feature - Padrao de Projeto
+
+
+Testes unitarios
+
+
+Teste de Integração
+  ->routes -> controllers -> useCases -> Repository
+  <- repository <- useCases <-controllers <- Routes 
