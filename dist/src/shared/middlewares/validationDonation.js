@@ -4,7 +4,7 @@ exports.validate = void 0;
 const AppError_1 = require("../util/AppError");
 // regex utilizado para validar o  tipo email
 const emailRegex = /^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](.?[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*.?[a-zA-Z0-9])*.[a-zA-Z](-?[a-zA-Z0-9])+$/;
-const stringRegex = /^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~]+$/;
+const stringRegex = /^[-!#$%&'~^,.:;*+/0-9=?A-Z^_a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ{|}~]+$/;
 function isStringValid(string) {
     if (!string)
         return false;
