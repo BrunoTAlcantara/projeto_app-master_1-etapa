@@ -18,7 +18,7 @@ class DonationsRepository {
         return __awaiter(this, void 0, void 0, function* () {
             const donations = yield this.prisma.donation.findMany({
                 orderBy: {
-                    id: "desc",
+                    updatedAt: "desc",
                 },
                 select: {
                     id: true,
