@@ -31,7 +31,9 @@ function isEmailValid(email) {
     if (parts[0].length > 64)
         return false;
     const domainParts = parts[1].split(".");
-    if (domainParts.some(function (part) {
+    if (
+    // eslint-disable-next-line func-names
+    domainParts.some(function (part) {
         return part.length > 63;
     }))
         return false;

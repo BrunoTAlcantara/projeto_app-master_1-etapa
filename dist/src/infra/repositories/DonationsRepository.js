@@ -33,7 +33,7 @@ class DonationsRepository {
             return donations;
         });
     }
-    create({ giver, devices, deviceCount }) {
+    create({ giver, devices, deviceCount, }) {
         return __awaiter(this, void 0, void 0, function* () {
             const exist = yield this.prisma.giver.findFirst({
                 where: {

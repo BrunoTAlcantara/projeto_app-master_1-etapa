@@ -27,7 +27,11 @@ class DonationsRepository implements IDonationRepository {
     return donations;
   }
 
-  async create({ giver, devices, deviceCount }: any): Promise<any> {
+  async create({
+    giver,
+    devices,
+    deviceCount,
+  }: ICreateDonation): Promise<IResponseDonation> {
     const exist = await this.prisma.giver.findFirst({
       where: {
         phone: giver.phone,
