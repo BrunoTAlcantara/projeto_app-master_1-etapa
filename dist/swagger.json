@@ -1,0 +1,121 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Doar computadores Documentation",
+        "description": "API Computers Donation ",
+        "version": "1.0.0",
+        "contact": {
+            "site": "https://www.appmasters.io/"
+        }
+    },
+    "paths": {
+        "/donation": {
+            "post": {
+                "tags": ["Donation"],
+                "summary": "Create Donation",
+                "description": "Create a new Donation",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Donation object that needs to be added to database",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/Donation"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "status True"
+                    },
+                    "400": {
+                        "description": "data invalid"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ReponseDonation": {
+                "type": "object"
+            },
+            "Donation": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "required": "name",
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        " format": "email"
+                    },
+                    "phone": {
+                        "required": true,
+                        "type": "string"
+                    },
+                    "zip": {
+                        "required": true,
+                        "type": "string"
+                    },
+                    "city": {
+                        "required": true,
+                        "type": "string"
+                    },
+                    "state": {
+                        "required": true,
+                        "type": "string"
+                    },
+                    "streetAddress": {
+                        "required": true,
+                        "type": "string"
+                    },
+                    "number": {
+                        "required": true,
+                        "type": "string"
+                    },
+                    "complement": {
+                        "type": "string"
+                    },
+                    "neighborhood": {
+                        "required": true,
+                        "type": "string"
+                    },
+                    "deviceCount": {
+                        "required": true,
+                        "type": "number"
+                    },
+                    "devices": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Devices"
+                        }
+                    }
+                }
+            },
+            "Devices": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "required": true,
+                        "enum": ["notebook", "desktop", "netbook", "screen", "printer", "scanner"],
+                        "type": "string"
+                    },
+                    "conditions": {
+                        "required": true,
+                        "type": "string",
+                        "enum": ["working", "notWorking", "broken"]
+                    }
+                }
+            }
+        }
+    }
+}
