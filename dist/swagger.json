@@ -10,12 +10,22 @@
     },
     "paths": {
         "/donation": {
+            "get": {
+                "tags": ["Donation"],
+                "summary": "List Donations",
+                "description": "List all Donations desc",
+                "responses": {
+                    "200": {
+                        "description": "List all Donations desc"
+                    }
+                }
+            },
             "post": {
                 "tags": ["Donation"],
                 "summary": "Create Donation",
                 "description": "Create a new Donation",
                 "consumes": [
-                    "multipart/form-data"
+                    "application/json"
                 ],
                 "produces": [
                     "application/json"
@@ -33,10 +43,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "status True"
+                        "description": "Criado com sucesso"
                     },
                     "400": {
-                        "description": "data invalid"
+                        "description": " Invalid Data "
                     }
                 }
             }
@@ -44,11 +54,29 @@
     },
     "components": {
         "schemas": {
-            "ReponseDonation": {
+            "ReponseGetDonation": {
                 "type": "object"
             },
             "Donation": {
                 "type": "object",
+                "example": {
+                    "name": "Sabrina Cláudia Nicole Barbosa",
+                    "email": "sabrina_claudia_barbosa@htomail.com",
+                    "phone": "51 3872-6836",
+                    "zip": "91510-204",
+                    "city": "Porto Alegre",
+                    "state": "RS",
+                    "streetAddress": "Beco Quatro",
+                    "number": "590",
+                    "neighborhood": "Coronel Aparicio Borges",
+                    "complement": "lado merca",
+                    "deviceCount": 3,
+                    "devices": [
+                        { "type": "notebook", "condition": "notWorking" },
+                        { "type": "screen", "condition": "notWorking" },
+                        { "type": "notebook", "condition": "working" }
+                    ]
+                },
                 "properties": {
                     "name": {
                         "required": "name",
