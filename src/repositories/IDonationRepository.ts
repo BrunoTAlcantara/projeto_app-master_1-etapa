@@ -1,6 +1,7 @@
 import {
   ICreateDonation,
   IResponseDonation,
+  IGiver,
 } from "../useCases/CreateDonation/createDonationDTO";
 
 export interface IDonationRepository {
